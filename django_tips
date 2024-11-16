@@ -1,0 +1,22 @@
+
+
+post = models.ForeignKey(
+Post,
+on_delete=models.CASCADE,
+related_name='comments'
+)
+
+The related_name attribute allows you to name the attribute that you use for the relationship from the
+related object back to this one. We can retrieve the post of a comment object using comment.post and
+retrieve all comments associated with a post object using post.comments.all().
+If you don’t define the related_name attribute, Django will use the name of the model in lowercase, followed by _set
+(that is, comment_set) to name the relationship of the related object to the object of the model, where
+this relationship has been defined.
+You can learn more about many-to-one relationships at https://docs.djangoproject.com/en/5.0/
+topics/db/examples/many_to_one/.
+
+
+
+
+The save() method is available for ModelForm but not for Form instances since
+they are not linked to any model.

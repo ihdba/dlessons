@@ -1,0 +1,20 @@
+{% load static %}
+<header class="header">
+
+    <div class="logo">
+        <a href="{% url "dashboard:dashboard" %}">
+            <img class="logo_img" src="{% static "/assets/images/olives-trsp.webp" %}"  alt="">
+        </a>
+        
+    </div>
+
+    <div class="nav_list">
+        <ul class="link_list">
+            <li class="link_item"><a href="{% url "dashboard:dashboard" %}">Home</a></li>
+            <li class="link_item"><a href="{% url "blog:post_list" %}">Blog</a></li>
+            <li class="link_item"><a href="{% url "dashboard:about" %}">About</a></li>
+        </ul>
+      
+    </div>
+    
+</header>
