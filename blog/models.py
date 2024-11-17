@@ -5,6 +5,7 @@ from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from taggit.managers import TaggableManager
 
 
 # Create Custom model manager that will retrieve all the posts that have PUBLISHED status.
@@ -44,6 +45,7 @@ class Post(models.Model):
     )
     objects = models.Manager() # The default manager 
     published = PublishedManager() # custom manager
+    tags = TaggableManager()
     
     class Meta:
         ordering = ['-publish']
