@@ -20,8 +20,20 @@
         <h2>My Blog</h2>
         <p>
             This is my blog.
-        I've written {% total_posts %} posts so far.
+            I've written {% total_posts %}
         </p>
+
+        <h3>Latest posts</h3>
+        {% show_latest_posts 3%}
+        <h3>Most commented posts</h3>
+        {% get_most_commented_posts as most_commentd_posts %}
+        <ul>
+            {% for post in most_commentd_posts  %}
+                <li>
+                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
 
    </div>
 
