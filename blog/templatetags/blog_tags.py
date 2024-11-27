@@ -1,9 +1,18 @@
+
 from django import template 
+
+import markdown
+from django.utils.safestring import mark_safe
 
 from ..models import Post
 from django.db.models import Count
 
 register = template.Library() 
+
+
+@register.filter(name='markdown')
+def markdown_filter(text):
+    return mark_safe(markdown.markdown(text))
 
 
 @register.simple_tag
@@ -24,3 +33,7 @@ def show_latest_posts(count=5):
 @register.simple_tag
 def total_posts():
     return Post.published.count()
+
+
+# !!!!!!!!!!!!!!!
+# Avoid using mark_safe on any content submitted by nonstaff users to prevent security vulnerabilities

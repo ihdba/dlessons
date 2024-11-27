@@ -183,3 +183,36 @@ p {
 }
 
 
+.greek-center{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 3px;
+}
+
+
+
+/* media queries
+
+X-sm                    o
+sm small viewport      576px
+md medium viewport     768px
+                        992px
+lg large viewport      1290px
+xl Extra large         1290px
+XXL                     1400px
+
+
+
+*/
+
+
+/*  
+    ###### create my own classes similar to TW or BS
+
+    mt-1 > margin-top: 1px;
+    .container will be display:grid with 12fr
+    
+    .col-4 will be within the grid div with width of 4fr
+    
+*/
